@@ -3,18 +3,60 @@ const CANCEL = 'spacex/rockets/CANCEL';
 
 const url = 'https://api.spacexdata.com/v3/rockets';
 
-const reserve = (payload) => {
+const initialState = [];
+
+const addRockets = (payload) => {
+  return {
+    type: 'ADD_ROCKETS',
+    payload
+  };
+};
+
+export const reserve = (payload) => {
   return {
     type: RESERVE,
     payload
   };
 };
 
-const cancel = (payload) => {
+export const cancel = (payload) => {
   return {
     type: CANCEL,
     payload
   };
 };
 
-const initialState = [];
+export const fetchData = () => async (dispatch) => {
+  const response = await fetch(url);
+  const data = await response.json();
+  console.log(data[3]);
+  data.forEach((el) => {
+    dispatch(
+      addRockets({
+        id: el.id,
+        name: el.rocket_name,
+        description: el.description,
+        image: el.flickr_images[0]
+      })
+    );
+  });
+};
+
+const reducer = (state = initialState, action) => {
+  console.log(action.payload);
+  switch (action.type) {
+    case RESERVE: {
+      return [...state, action.payload];
+    }
+    case CANCEL: {
+      return [...state, action.payload];
+    }
+    case 'ADD_ROCKETS': {
+      return [...state, ...payload];
+    }
+    default:
+      return state;
+  }
+};
+
+export default reducer;
