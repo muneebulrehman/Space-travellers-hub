@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import './App.css';
 import { BrowserRouter } from 'react-router-dom';
 import Navbar from './components/navbar';
+import AllRockets from './components/AllRockets';
 import { fetchData } from './redux/rockets/rockets';
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
     <BrowserRouter>
       <div className="app">
         <Navbar />
+        <AllRockets />
       </div>
     </BrowserRouter>
   );
