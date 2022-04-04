@@ -29,7 +29,6 @@ export const cancel = (payload) => {
 export const fetchData = () => async (dispatch) => {
   const response = await fetch(url);
   const data = await response.json();
-  console.log(data);
   data.forEach((el) => {
     dispatch(
       addRockets({
@@ -43,7 +42,6 @@ export const fetchData = () => async (dispatch) => {
 };
 
 const reducer = (state = initialState, action) => {
-  console.log(action.payload);
   switch (action.type) {
     case RESERVE: {
       return [...state, action.payload];
