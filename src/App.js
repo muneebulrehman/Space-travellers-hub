@@ -1,15 +1,15 @@
 import React from 'react';
 import './App.css';
-import { BrowserRoute } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import Navbar from './components/navbar';
 
 const App = () => {
   return (
-    <BrowserRoute>
+    <BrowserRouter>
       <div className="app">
         <Navbar />
       </div>
-    </BrowserRoute>
+    </BrowserRouter>
   );
 };
 
