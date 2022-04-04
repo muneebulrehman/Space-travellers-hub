@@ -35,7 +35,8 @@ export const fetchData = () => async (dispatch) => {
         id: el.id,
         name: el.rocket_name,
         description: el.description,
-        image: el.flickr_images[0]
+        image: el.flickr_images[0],
+        reserved: false
       })
     );
   });

@@ -3,7 +3,7 @@ import style from './styling/Rocket.module.css';
 
 const Rocket = ({ id, name, description, image }) => {
   return (
-    <div className={style.rocker}>
+    <div className={style.rocket}>
       <div className={style['img-container']}>
         <img src={image} alt={name + 'image'} />
       </div>

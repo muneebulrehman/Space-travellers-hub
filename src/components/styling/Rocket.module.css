@@ -1,0 +1,16 @@
+.rocket {
+  display: flex;
+  gap: 1rem;
+}
+
+.img-container img {
+  height: 10rem;
+  width: 12rem;
+}
+
+.rocket-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
