@@ -4,6 +4,10 @@
     justify-content: space-around;
 }
 
+.my_profile_container section {
+    width: 40%;
+}
+
 .my_profile_container ul {
     list-style: none;
     border: 1px solid gainsboro;
