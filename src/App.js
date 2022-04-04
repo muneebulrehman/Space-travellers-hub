@@ -4,6 +4,7 @@ import './App.css';
 import { BrowserRouter } from 'react-router-dom';
 import Navbar from './components/navbar';
 import AllRockets from './components/AllRockets';
+import MyProfile from './components/MyProfile';
 import { fetchData } from './redux/rockets/rockets';
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
       <div className="app">
         <Navbar />
         <AllRockets />
+        <MyProfile />
       </div>
     </BrowserRouter>
   );
