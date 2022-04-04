@@ -50,7 +50,7 @@ const reducer = (state = initialState, action) => {
       return [...state, action.payload];
     }
     case 'ADD_ROCKETS': {
-      return [...state, { ...action.payload }];
+      return [...state, action.payload];
     }
     default:
       return state;

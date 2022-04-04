@@ -5,7 +5,13 @@ import style from './styling/AllRockets.module.css';
 
 const AllRockets = () => {
   const data = useSelector((rocketReducer) => rocketReducer);
-  return <div className={style.rockets}></div>;
+  return (
+    <div className={style.rockets}>
+      {data.map((rocket) => {
+        return <Rocket key={rocket.id} />;
+      })}
+    </div>
+  );
 };
 
 export default AllRockets;

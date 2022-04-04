@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Rocket = () => {
+const Rocket = ({ data }) => {
   return <div>Rocket</div>;
 };
 
