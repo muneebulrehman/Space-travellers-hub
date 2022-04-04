@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import './App.css';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route , Routes} from 'react-router-dom';
 import Navbar from './components/navbar';
 import AllRockets from './components/AllRockets';
 import MyProfile from './components/MyProfile';
@@ -16,8 +16,10 @@ const App = () => {
     <BrowserRouter>
       <div className="app">
         <Navbar />
-        <AllRockets />
-        <MyProfile />
+        <Routes>
+          <Route path='/' element={<AllRockets />} />
+          <Route path='profile' element={<MyProfile />} />
+        </Routes>
       </div>
     </BrowserRouter>
   );
