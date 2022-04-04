@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from './assets/logo.png';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import style from './styling/navbar.module.css';
 
 const navbar = () => {
@@ -11,10 +11,10 @@ const navbar = () => {
         <h2>Space Travelers' Hub</h2>
       </div>
       <div className={style.list}>
-        <Link to="/rockets">Rockets</Link>
-        <Link to="/missions">Missions</Link>
+        <NavLink to="/rockets">Rockets</NavLink>
+        <NavLink to="/missions">Missions</NavLink>
         <div className={style.line}></div>
-        <Link to="/profile">My Profile</Link>
+        <NavLink to="/profile">My Profile</NavLink>
       </div>
     </nav>
   );
