@@ -1,7 +1,13 @@
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import MyProfile from './components/MyProfile';
+
 function App() {
   return (
     <>
-      <h1>Hello from the react</h1>
+      <Routes>
+        <Route path="/" element={<MyProfile />} />
+      </Routes>
     </>
   );
 }

@@ -1,0 +1,15 @@
+.my_profile_container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.my_profile_container ul {
+    list-style: none;
+    border: 1px solid gainsboro;
+    padding: 0%;
+}
+
+.my_profile_container li {
+    border-bottom: 1px solid gainsboro;
+}
