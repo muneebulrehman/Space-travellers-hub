@@ -29,7 +29,7 @@ export const cancel = (payload) => {
 export const fetchData = () => async (dispatch) => {
   const response = await fetch(url);
   const data = await response.json();
-  console.log(data[3]);
+  console.log(data);
   data.forEach((el) => {
     dispatch(
       addRockets({
@@ -52,7 +52,7 @@ const reducer = (state = initialState, action) => {
       return [...state, action.payload];
     }
     case 'ADD_ROCKETS': {
-      return [...state, ...payload];
+      return [...state, { ...action.payload }];
     }
     default:
       return state;
