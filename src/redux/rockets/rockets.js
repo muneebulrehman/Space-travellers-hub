@@ -33,18 +33,6 @@ export const fetchData = () => async (dispatch) => {
     };
   });
   dispatch(addRockets(array));
-
-  // data.forEach((el) => {
-  //   dispatch(
-  //     addRockets({
-  //       id: el.id,
-  //       name: el.rocket_name,
-  //       description: el.description,
-  //       image: el.flickr_images[0],
-  //       reserved: false
-  //     })
-  //   );
-  // });
 };
 
 const reducer = (state = initialState, action) => {
@@ -62,7 +50,6 @@ const reducer = (state = initialState, action) => {
       });
     }
     case 'ADD_ROCKETS': {
-      console.log(action.payload);
       return [...state, ...action.payload];
     }
     default:
