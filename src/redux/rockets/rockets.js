@@ -40,7 +40,9 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case RESERVE: {
       return state.map((el) => {
-        if (el.id === action.payload) el.reserved = true;
+        if (el.id === action.payload) {
+          el.reserved = true;
+        }
         return el;
       });
     }
