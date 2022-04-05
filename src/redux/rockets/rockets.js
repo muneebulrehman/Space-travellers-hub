@@ -5,26 +5,20 @@ const url = 'https://api.spacexdata.com/v3/rockets';
 
 const initialState = [];
 
-const addRockets = (payload) => {
-  return {
-    type: 'ADD_ROCKETS',
-    payload
-  };
-};
+const addRockets = (payload) => ({
+  type: 'ADD_ROCKETS',
+  payload
+});
 
-export const reserve = (payload) => {
-  return {
-    type: RESERVE,
-    payload
-  };
-};
+export const reserve = (payload) => ({
+  type: RESERVE,
+  payload
+});
 
-export const cancel = (payload) => {
-  return {
-    type: CANCEL,
-    payload
-  };
-};
+export const cancel = (payload) => ({
+  type: CANCEL,
+  payload
+});
 
 export const fetchData = () => async (dispatch) => {
   const response = await fetch(url);
