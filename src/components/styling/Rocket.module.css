@@ -14,3 +14,7 @@
   align-items: flex-start;
   gap: 1rem;
 }
+
+.btn {
+  padding: 0.25rem 1rem;
+}
