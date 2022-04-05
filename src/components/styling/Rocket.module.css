@@ -2,6 +2,9 @@
   display: flex;
   gap: 1rem;
 }
+p {
+  line-height: 1.5rem;
+}
 
 .img-container img {
   height: 10rem;
@@ -16,5 +19,28 @@
 }
 
 .btn {
-  padding: 0.25rem 1rem;
+  padding: 0.25rem 0.5rem;
+  background-color: rgb(3, 161, 252);
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn_cancel {
+  padding: 0.25rem 0.5rem;
+  background-color: transparent;
+  color: grey;
+  box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.6);
+  border: 1px solid grey;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.reserved {
+  background-color: teal;
+  padding: 0.15rem 0.5rem;
+  font-size: 0.65rem;
+  color: white;
+  margin-right: 0.75rem;
+  border-radius: 5px;
 }
