@@ -4,7 +4,6 @@ import Rocket from './Rocket';
 import style from './styling/AllRockets.module.css';
 
 const AllRockets = () => {
-  console.log('Hello from the rockets');
   const data = useSelector((rocketReducer) => rocketReducer);
   return (
     <div className={style.rockets}>
