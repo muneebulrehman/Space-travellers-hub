@@ -6,6 +6,7 @@ import Navbar from './components/navbar';
 import AllRockets from './components/AllRockets';
 import MyProfile from './components/MyProfile';
 import { fetchData } from './redux/rockets/rockets';
+import Missions from './components/Missions';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -18,7 +19,9 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<AllRockets />} />
+          <Route path="rockets" element={<AllRockets />} />
           <Route path="profile" element={<MyProfile />} />
+          <Route path="missions" element={<Missions />} />
         </Routes>
       </div>
     </BrowserRouter>
