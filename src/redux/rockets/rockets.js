@@ -45,7 +45,7 @@ const reducer = (state = initialState, action) => {
       });
     }
     case CANCEL: {
-      return [...state, action.payload];
+      return [...state, { ...item }];
     }
     case 'ADD_ROCKETS': {
       return [...state, action.payload];
