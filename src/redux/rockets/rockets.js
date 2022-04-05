@@ -45,7 +45,10 @@ const reducer = (state = initialState, action) => {
       });
     }
     case CANCEL: {
-      return [...state, { ...item }];
+      return state.map((el) => {
+        if (el.id === action.payload) el.reserved = false;
+        return el;
+      });
     }
     case 'ADD_ROCKETS': {
       return [...state, action.payload];
