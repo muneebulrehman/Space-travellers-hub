@@ -8,7 +8,7 @@ const AllRockets = () => {
   return (
     <div className={style.rockets}>
       {data.map((rocket) => {
-        return <Rocket key={rocket.id} />;
+        return <Rocket key={rocket.id} {...rocket} />;
       })}
     </div>
   );
