@@ -23,17 +23,28 @@ export const cancel = (payload) => ({
 export const fetchData = () => async (dispatch) => {
   const response = await fetch(url);
   const data = await response.json();
-  data.forEach((el) => {
-    dispatch(
-      addRockets({
-        id: el.id,
-        name: el.rocket_name,
-        description: el.description,
-        image: el.flickr_images[0],
-        reserved: false
-      })
-    );
+  const array = data.map((el) => {
+    return {
+      id: el.id,
+      name: el.rocket_name,
+      description: el.description,
+      image: el.flickr_images[0],
+      reserved: false
+    };
   });
+  dispatch(addRockets(array));
+
+  // data.forEach((el) => {
+  //   dispatch(
+  //     addRockets({
+  //       id: el.id,
+  //       name: el.rocket_name,
+  //       description: el.description,
+  //       image: el.flickr_images[0],
+  //       reserved: false
+  //     })
+  //   );
+  // });
 };
 
 const reducer = (state = initialState, action) => {
@@ -51,7 +62,8 @@ const reducer = (state = initialState, action) => {
       });
     }
     case 'ADD_ROCKETS': {
-      return [...state, action.payload];
+      console.log(action.payload);
+      return [...state, ...action.payload];
     }
     default:
       return state;
