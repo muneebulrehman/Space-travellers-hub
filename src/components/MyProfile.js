@@ -1,7 +1,10 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import './styling/MyProfile.css';
 
 function MyProfile() {
+  const data = useSelector((rocketReducer) => rocketReducer);
+  const list = data.filter((item) => item.reserved === true);
   return (
     <div className="my_profile_container">
       <section className="my_profile_missions">
@@ -14,11 +17,13 @@ function MyProfile() {
       </section>
       <section className="my_profile_rockets">
         <h2>My Rockets</h2>
-        <ul>
-          <li>Falcon9</li>
-          <li>Falcon Heavy</li>
-          <li>Starship</li>
-        </ul>
+        {list.length !== 0 && (
+          <ul>
+            {list.map((item) => (
+              <li key={item.id}>{item.name}</li>
+            ))}
+          </ul>
+        )}
       </section>
     </div>
   );
