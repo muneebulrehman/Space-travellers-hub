@@ -19,17 +19,17 @@ function MyProfile() {
             ))
           }
           </ul>
-        ) : 'You didn\'t join any mission yet!'}
+        ) : (<span>No missions joined yet!</span>)}
       </section>
       <section className="my_profile_rockets">
         <h2>My Rockets</h2>
-        {list.length !== 0 && (
+        {list.length !== 0 ? (
           <ul>
             {list.map((item) => (
               <li key={item.id}>{item.name}</li>
             ))}
           </ul>
-        )}
+        ) : (<span>No Rockets Reserved yet!</span>)}
       </section>
     </div>
   );
