@@ -22,10 +22,19 @@ export function setMissions(missions) {
   return { type: SET_MISSIONS, missions };
 }
 
+const reformulateData = (data) => {
+  const missions = data.map(mission=>({
+    mission_id:mission.mission_id,
+    mission_name:mission.mission_name,
+    description:mission.description
+  }))
+  return missions
+};
+
 export const getMissions =()=> async(dispatch)=>{
      const response = await fetch(missionApiUrl);
      const data= await response.json()
-     dispatch(setMissions(data))
+     dispatch(setMissions(reformulateData(data)))
 }
 
 
