@@ -4,9 +4,7 @@ import './styling/MyProfile.css';
 
 function MyProfile() {
   const data = useSelector((rocketReducer) => rocketReducer);
-  const list = data.filter((item) => {
-    if (item.reserved === true) return item;
-  });
+  const list = data.filter((item) => item.reserved === true);
   return (
     <div className="my_profile_container">
       <section className="my_profile_missions">
