@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import style from './styling/Rocket.module.css';
+import { reserve, cancel } from '../redux/rockets/rockets';
 
 const Rocket = ({ id, name, description, image, reserved }) => {
+  const dispatch = useDispatch();
   return (
     <div className={style.rocket}>
       <div className={style['img-container']}>
@@ -11,15 +13,15 @@ const Rocket = ({ id, name, description, image, reserved }) => {
       <div className={style['rocket-info']}>
         <h3>{name}</h3>
         <p>
-          {reserved && <p className={style.reserved}>Reserved</p>}
+          {reserved && <span className={style.reserved}>Reserved</span>}
           {description}
         </p>
-        {reserved ? (
-          <button type="button" className={style.btn}>
+        {!reserved ? (
+          <button type="button" className={style.btn} onClick={() => dispatch(reserve(id))}>
             Reserve Rocket
           </button>
         ) : (
-          <button type="button" className={style['btn-cancel']}>
+          <button type="button" className={style['btn_cancel']}>
             Cancel Reservation
           </button>
         )}
