@@ -39,10 +39,18 @@ export const fetchData = () => async (dispatch) => {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case RESERVE: {
-      return [...state, action.payload];
+      return state.map((el) => {
+        if (el.id === action.payload) {
+          el.reserved = true;
+        }
+        return el;
+      });
     }
     case CANCEL: {
-      return [...state, action.payload];
+      return state.map((el) => {
+        if (el.id === action.payload) el.reserved = false;
+        return el;
+      });
     }
     case 'ADD_ROCKETS': {
       return [...state, action.payload];
