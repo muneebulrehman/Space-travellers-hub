@@ -2,8 +2,6 @@
 const missionApiUrl = 'https://api.spacexdata.com/v3/missions';
 export const missionsInitialState = [];
 const SET_MISSIONS = 'SPACE-TRAVELLERS-HUB/missions/SET_MISSIONS';
-const ADD_MISSION = 'SPACE-TRAVELLERS-HUB/missions/ADD_MISSION';
-const REMOVE_MISSION = 'SPACE-TRAVELLERS-HUB/missions/REMOVE_MISSION';
 const JOIN_LEAVE = 'SPACE-TRAVELLERS-HUB/missions/JOIN_LEAVE';
 
 export const missionsReducer = (state = missionsInitialState, action) => {
@@ -12,11 +10,10 @@ export const missionsReducer = (state = missionsInitialState, action) => {
       return action.missions;
     case JOIN_LEAVE:
       return [...state].map((mission) => {
-          if(mission.mission_id !== action.data.id){
-            return {...mission}
-          }else {
-            return { ...mission, joined: action.data.joinOrLeave}
-          }
+        if (mission.mission_id !== action.data.id) {
+          return { ...mission };
+        }
+        return { ...mission, joined: action.data.joinOrLeave };
       });
     default:
       return state;

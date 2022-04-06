@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import './styling/MyProfile.css';
 
 function MyProfile() {
-  const data = useSelector((rocketReducer) => rocketReducer);
+  const data = useSelector((state) => state.rockets);
   const list = data.filter((item) => item.reserved === true);
   return (
     <div className="my_profile_container">
