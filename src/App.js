@@ -7,7 +7,7 @@ import AllRockets from './components/AllRockets';
 import MyProfile from './components/MyProfile';
 import { fetchData } from './redux/rockets/rockets';
 import Missions from './components/Missions';
-import {getMissions} from './redux/missions/missions'
+import { getMissions } from './redux/missions/missions';
 
 const App = () => {
   const dispatch = useDispatch();

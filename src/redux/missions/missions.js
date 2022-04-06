@@ -1,5 +1,5 @@
-//import BookStoreService from '../../api/apiServices';
-const missionApiUrl='https://api.spacexdata.com/v3/missions';
+// import BookStoreService from '../../api/apiServices';
+const missionApiUrl = 'https://api.spacexdata.com/v3/missions';
 export const missionsInitialState = [];
 const SET_MISSIONS = 'SPACE-TRAVELLERS-HUB/missions/SET_MISSIONS';
 const ADD_MISSION = 'SPACE-TRAVELLERS-HUB/missions/ADD_MISSION';
@@ -23,21 +23,19 @@ export function setMissions(missions) {
 }
 
 const reformulateData = (data) => {
-  const missions = data.map(mission=>({
-    mission_id:mission.mission_id,
-    mission_name:mission.mission_name,
-    description:mission.description
-  }))
-  return missions
+  const missions = data.map((mission) => ({
+    mission_id: mission.mission_id,
+    mission_name: mission.mission_name,
+    description: mission.description
+  }));
+  return missions;
 };
 
-export const getMissions =()=> async(dispatch)=>{
-     const response = await fetch(missionApiUrl);
-     const data= await response.json()
-     dispatch(setMissions(reformulateData(data)))
-}
-
-
+export const getMissions = () => async (dispatch) => {
+  const response = await fetch(missionApiUrl);
+  const data = await response.json();
+  dispatch(setMissions(reformulateData(data)));
+};
 
 // export const addMission = (mission) => async (dispatch) => {
 //    const response = await fetch(book);
