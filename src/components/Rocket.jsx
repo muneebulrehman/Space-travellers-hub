@@ -21,7 +21,10 @@ const Rocket = ({ id, name, description, image, reserved }) => {
             Reserve Rocket
           </button>
         ) : (
-          <button type="button" className={style['btn_cancel']}>
+          <button
+            type="button"
+            className={style['btn_cancel']}
+            onClick={() => dispatch(cancel(id))}>
             Cancel Reservation
           </button>
         )}
