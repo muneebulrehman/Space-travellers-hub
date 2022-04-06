@@ -5,6 +5,7 @@ import style from './styling/AllRockets.module.css';
 
 const AllRockets = () => {
   const data = useSelector((rocketReducer) => rocketReducer);
+  console.log('all rockets>>>',data)
   return (
     <div className={style.rockets}>
       {data.map((rocket) => {
