@@ -4,15 +4,20 @@ export const missionsInitialState = [];
 const SET_MISSIONS = 'SPACE-TRAVELLERS-HUB/missions/SET_MISSIONS';
 const ADD_MISSION = 'SPACE-TRAVELLERS-HUB/missions/ADD_MISSION';
 const REMOVE_MISSION = 'SPACE-TRAVELLERS-HUB/missions/REMOVE_MISSION';
+const JOIN_LEAVE = 'SPACE-TRAVELLERS-HUB/missions/JOIN_LEAVE';
 
 export const missionsReducer = (state = missionsInitialState, action) => {
   switch (action.type) {
     case SET_MISSIONS:
       return action.missions;
-    case ADD_MISSION:
-      return [...state, action.mission];
-    case REMOVE_MISSION:
-      return [...state].filter((mission) => mission.item_id !== action.id);
+    case JOIN_LEAVE:
+      return [...state].map((mission) => {
+          if(mission.mission_id !== action.data.id){
+            return {...mission}
+          }else {
+            return { ...mission, joined: action.data.joinOrLeave}
+          }
+      });
     default:
       return state;
   }
@@ -26,7 +31,8 @@ const reformulateData = (data) => {
   const missions = data.map((mission) => ({
     mission_id: mission.mission_id,
     mission_name: mission.mission_name,
-    description: mission.description
+    description: mission.description,
+    joined: false
   }));
   return missions;
 };
@@ -37,12 +43,4 @@ export const getMissions = () => async (dispatch) => {
   dispatch(setMissions(reformulateData(data)));
 };
 
-// export const addMission = (mission) => async (dispatch) => {
-//    const response = await fetch(book);
-//   dispatch({ type: ADD_BOOK, book });
-// };
-
-// export const removeBook = (id) => async (dispatch) => {
-//   await BookStoreService.apiRemoveBook(id);
-//   dispatch({ type: REMOVE_BOOK, id });
-// };
+export const joinLeaveMission = (data) => ({ type: JOIN_LEAVE, data });

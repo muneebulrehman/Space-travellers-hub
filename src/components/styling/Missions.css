@@ -1,0 +1,43 @@
+.missions_container {
+    width: 100%;
+    margin: 5vh auto;
+}
+
+table {
+    width: 100%;
+}
+
+table, th, td {
+    text-align: left;
+    border: 1px solid #bababb;
+    border-collapse: collapse;
+    padding: 5px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #E7E7E8;
+  }
+
+.mission_column {
+    font-weight: 600;
+}  
+
+.mission_column, .status_column, .join_column{
+    width: 10%;
+}
+
+.desc_column {
+    width: 60%;
+}
+
+.mission_join {
+    color: #bababb;
+    background-color: white;
+    border:1px solid #bababb;
+}
+
+.mission_leave {
+    color: red;
+    background-color: white;
+    border:1px solid red;
+}
