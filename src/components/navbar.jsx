@@ -11,7 +11,7 @@ const navbar = () => {
         <h2>Space Travelers' Hub</h2>
       </div>
       <div className={style.list}>
-        <NavLink to="/rockets">Rockets</NavLink>
+        <NavLink to="/">Rockets</NavLink>
         <NavLink to="/missions">Missions</NavLink>
         <div className={style.line}></div>
         <NavLink to="/profile">My Profile</NavLink>
