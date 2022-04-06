@@ -1,43 +1,47 @@
 .missions_container {
-    width: 100%;
-    margin: 5vh auto;
+  width: 100%;
+  margin: 5vh auto;
 }
 
 table {
-    width: 100%;
+  width: 100%;
 }
 
-table, th, td {
-    text-align: left;
-    border: 1px solid #bababb;
-    border-collapse: collapse;
-    padding: 5px;
-  }
+table,
+th,
+td {
+  text-align: left;
+  border: 1px solid #bababb;
+  border-collapse: collapse;
+  padding: 5px;
+}
 
-  tr:nth-child(even) {
-    background-color: #E7E7E8;
-  }
+tr:nth-child(even) {
+  background-color: #e7e7e8;
+}
 
 .mission_column {
-    font-weight: 600;
-}  
+  font-weight: 600;
+}
 
-.mission_column, .status_column, .join_column{
-    width: 10%;
+.mission_column,
+.status_column,
+.join_column {
+  width: 10%;
 }
 
 .desc_column {
-    width: 60%;
+  width: 60%;
 }
 
 .mission_join {
-    color: #bababb;
-    background-color: white;
-    border:1px solid #bababb;
+  color: #bababb;
+  background-color: white;
+  border: 1px solid #bababb;
 }
 
 .mission_leave {
-    color: red;
-    background-color: white;
-    border:1px solid red;
+  color: red;
+  background-color: white;
+  border: 1px solid red;
 }
