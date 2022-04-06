@@ -9,6 +9,8 @@ const rootReducer = combineReducers({
     missions: missionsReducer,
     rockets: rocketReducer,
   });
-const store = createStore((state, action) => rootReducer(state, action),{ rockets: initialState, missions: missionsInitialState }, composeWithDevTools(applyMiddleware(thunk)));
+const store = createStore((state, action) => rootReducer(state, action),
+                          { rockets: initialState, missions: missionsInitialState },
+                          composeWithDevTools(applyMiddleware(thunk)));
 
 export default store;

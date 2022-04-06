@@ -22,6 +22,14 @@ export function setMissions(missions) {
   return { type: SET_MISSIONS, missions };
 }
 
+export const getMissions =()=> async(dispatch)=>{
+     const response = await fetch(missionApiUrl);
+     const data= await response.json()
+     dispatch(setMissions(data))
+}
+
+
+
 // export const addMission = (mission) => async (dispatch) => {
 //    const response = await fetch(book);
 //   dispatch({ type: ADD_BOOK, book });

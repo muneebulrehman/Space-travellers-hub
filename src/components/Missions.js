@@ -1,16 +1,16 @@
 import React,{useEffect} from 'react'
+import {getMissions} from '../redux/missions/missions'
+import { useDispatch, useSelector } from 'react-redux';
 
 const missionApiUrl='https://api.spacexdata.com/v3/missions';
 function Missions() {
-  useEffect(async() => {
-    const fetchMissions=async()=>{
-        const response = await fetch(missionApiUrl);
-        const data=response.json();
-        console.log(data)
-    }
-    await fetchMissions(); 
-  }, []);
-
+  const missions = useSelector((state)=>state.missions)  
+  const dispatch = useDispatch()
+  console.log(missions)
+  useEffect(() => {
+     dispatch(getMissions())
+  }, [])
+  
   return 
       (
           <div>hallo missions</div>
