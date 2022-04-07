@@ -14,7 +14,7 @@ Additional description about the project and its features.
 
 ## Api used
 
--[SpaceX](https://api.spacexdata.com/v3)
+- https://api.spacexdata.com/v3
 
 ## Prerequisites
 
