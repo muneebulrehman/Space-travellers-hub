@@ -3,7 +3,7 @@ const CANCEL = 'spacex/rockets/CANCEL';
 
 const url = 'https://api.spacexdata.com/v3/rockets';
 
-const initialState = [];
+export const initialState = [];
 
 const addRockets = (payload) => ({
   type: 'ADD_ROCKETS',
