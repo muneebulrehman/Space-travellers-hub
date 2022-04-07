@@ -1,0 +1,27 @@
+.my_profile_container {
+  margin: 5vh auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.my_profile_container section {
+  padding: 5vh 0;
+  width: 40%;
+}
+
+.my_profile_container h2 {
+  margin: 5vh auto;
+}
+
+.my_profile_container ul {
+  margin: 5vh auto;
+  list-style: none;
+  border: 1px solid gainsboro;
+  padding: 0%;
+}
+
+.my_profile_container li {
+  border-bottom: 1px solid gainsboro;
+  padding: 1rem;
+}

@@ -1,0 +1,76 @@
+.missions_container {
+  width: 100%;
+  margin: 5vh auto;
+}
+
+table {
+  width: 100%;
+}
+
+table,
+th,
+td {
+  text-align: left;
+  align-items: flex-start;
+  border: 1px solid #bababb;
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+tr:nth-child(even) {
+  background-color: #e7e7e8;
+}
+
+.mission_columns {
+  font-weight: 600;
+}
+
+.mission_column,
+.status_column,
+.join_column {
+  width: 10%;
+}
+
+.desc_column {
+  width: 60%;
+}
+
+.description {
+  padding: 10px;
+  font-size: medium;
+}
+
+.mission_join {
+  color: #bababb;
+  background-color: white;
+  border: 1px solid #bababb;
+}
+
+.mission_leave {
+  color: red;
+  background-color: white;
+  border: 1px solid red;
+}
+
+.active_member {
+  background-color: teal;
+  color: white;
+}
+
+.not_member {
+  background-color: grey;
+  color: white;
+}
+
+.mission_status,
+.join_mission {
+  text-align: center;
+}
+
+.mission_status button,
+.join_mission button,
+.mission_status span,
+.join_mission span {
+  border-radius: 5px;
+  padding: 5px;
+}
