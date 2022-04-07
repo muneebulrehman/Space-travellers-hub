@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React from 'react';
+import { useDispatch } from 'react-redux';
 import style from './styling/Rocket.module.css';
 import { reserve, cancel } from '../redux/rockets/rockets';
 
+/* eslint-disable-next-line react/jsx-props-no-spreading */
 const Rocket = ({ id, name, description, image, reserved }) => {
   const dispatch = useDispatch();
   return (

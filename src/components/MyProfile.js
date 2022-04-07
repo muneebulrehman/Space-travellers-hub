@@ -13,13 +13,13 @@ function MyProfile() {
         <h2>My Missions</h2>
         {myMissions.length !== 0 ? (
           <ul>
-            {
-            myMissions.map((mission) => (
+            {myMissions.map((mission) => (
               <li key={mission.mission_id}>{mission.mission_name}</li>
-            ))
-          }
+            ))}
           </ul>
-        ) : (<span>No missions joined yet!</span>)}
+        ) : (
+          <span>No missions joined yet!</span>
+        )}
       </section>
       <section className="my_profile_rockets">
         <h2>My Rockets</h2>
@@ -29,7 +29,9 @@ function MyProfile() {
               <li key={item.id}>{item.name}</li>
             ))}
           </ul>
-        ) : (<span>No Rockets Reserved yet!</span>)}
+        ) : (
+          <span>No Rockets Reserved yet!</span>
+        )}
       </section>
     </div>
   );

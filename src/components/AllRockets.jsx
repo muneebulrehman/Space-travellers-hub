@@ -8,9 +8,10 @@ const AllRockets = () => {
   if (data.length < 1) return <h2 className={style.loading}>loading...</h2>;
   return (
     <div className={style.rockets}>
-      {data.map((rocket) => {
-        return <Rocket key={rocket.id} {...rocket} />;
-      })}
+      {data.map((rocket) => (
+        /* eslint-disable-next-line react/jsx-props-no-spreading */
+        <Rocket key={rocket.id} {...rocket} />
+      ))}
     </div>
   );
 };

@@ -23,11 +23,31 @@ function Missions() {
             <tr key={mission.mission_id}>
               <td className="mission_columns">{mission.mission_name}</td>
               <td className="description">{mission.description}</td>
-              <td className="mission_status">{mission.joined ? (<span className="active_member">Active Member</span>) : (<span className="not_member">Not a Member</span>)}</td>
+              <td className="mission_status">
+                {mission.joined ? (
+                  <span className="active_member">Active Member</span>
+                ) : (
+                  <span className="not_member">Not a Member</span>
+                )}
+              </td>
               <td className="join_mission">
-                {mission.joined
-                  ? (<button type="button" className="mission_leave" onClick={() => handleClick(mission.mission_id, false)}>Leave mission</button>)
-                  : (<button type="button" className="mission_join" onClick={() => handleClick(mission.mission_id, true)}>Join Mission</button>)}
+                {mission.joined ? (
+                  <button
+                    type="button"
+                    className="mission_leave"
+                    onClick={() => handleClick(mission.mission_id, false)}
+                  >
+                    Leave mission
+                  </button>
+                ) : (
+                  <button
+                    type="button"
+                    className="mission_join"
+                    onClick={() => handleClick(mission.mission_id, true)}
+                  >
+                    Join Mission
+                  </button>
+                )}
               </td>
             </tr>
           ))}
