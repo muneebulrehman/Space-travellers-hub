@@ -7,7 +7,7 @@ const navbar = () => (
   <nav>
     <div className={style.logo}>
       <img src={logo} alt="logo" />
-      <h2>Space Travelers`&apos;` Hub</h2>
+      <h2>Space Travelers&apos; Hub</h2>
     </div>
     <div className={style.list}>
       <NavLink to="/">Rockets</NavLink>
