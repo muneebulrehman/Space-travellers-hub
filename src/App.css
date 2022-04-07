@@ -20,4 +20,5 @@ a {
 
 .active {
   color: orangered;
+  text-decoration: underline;
 }
