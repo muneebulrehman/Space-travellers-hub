@@ -1,6 +1,8 @@
 # Space Travelers' Hub
 
 This web helps you reserved SpaceX rockets and missions of your liking. You can join a mission or leave it if you don't like it any more. ALl the reserved rockets and joined missions can be accessed from My Profile section.
+### Live link
+- [Link](spacextravelershub.netlify.app)
 
 ![screenshot](./screenshot.png)
 
