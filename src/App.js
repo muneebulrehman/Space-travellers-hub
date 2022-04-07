@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import './App.css';
 import Navbar from './components/navbar';
 import AllRockets from './components/AllRockets';
 import MyProfile from './components/MyProfile';
